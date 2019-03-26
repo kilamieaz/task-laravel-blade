@@ -17,3 +17,14 @@ Route::get('/', function () {
 
 
 Route::get('admin', 'AdminController@index');
+
+Route::get('login', 'UserController@index')->name('login.form');
+Route::post('login/attempt', 'UserController@attempt')->name('login.attempt');
+
+Route::get('register', 'UserController@create')->name('register.form');
+Route::post('register/attempt', 'UserController@store')->name('register.attempt');
+
+Route::post('logout', 'UserController@destroy')->name('logout');
+
+Route::get('homepage', 'LayoutController@homepage')->name('homepage');
+Route::get('contact', 'LayoutController@contact')->name('contact');
